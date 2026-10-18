@@ -1,0 +1,45 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Reyes;Marisol;;;
+FN:Marisol Reyes
+ORG:Harpeth Valley Construction;
+TITLE:Preconstruction Manager
+TEL;type=CELL;type=VOICE;type=pref:(615) 555-0142
+EMAIL;type=INTERNET;type=WORK;type=pref:marisol@harpethvalley.example
+ADR;type=WORK;type=pref:;;410 Church St;Nashville;TN;37219;USA
+NOTE:Met at the Cool Springs medical office walk-through. Prefers email before
+  9 AM.
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Okafor;Daniel;;;
+FN:Daniel Okafor
+TEL;type=HOME;type=VOICE:6155550167
+EMAIL;type=INTERNET;type=HOME:daniel.okafor@example.com
+ADR;type=HOME:;;1920 Beechwood Ave;Nashville;TN;37212;USA
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:;;;;
+FN:Belle Meade Homeowners Association
+ORG:Belle Meade HOA;
+TEL;type=WORK;type=VOICE:(615) 555-0188
+EMAIL;type=INTERNET;type=WORK:board@bellemeadehoa.example
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Nguyen;Thao;;;
+FN:Thao Nguyen
+ORG:Nguyen Electric LLC;
+TEL;type=CELL;type=VOICE:(615) 555-0193
+EMAIL;type=INTERNET;type=WORK:thao@nguyenelectric.example
+ADR;type=WORK:;;88 Industrial Dr;La Vergne;TN;37086;USA
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:Natarajan;Priya;;;
+FN:Priya Natarajan
+TEL;type=CELL;type=VOICE:(615) 555-0111
+EMAIL;type=INTERNET;type=HOME:priya.n@example.com
+ADR;type=HOME:;;2214 Golf Club Ln;Nashville;TN;37215;USA
+END:VCARD

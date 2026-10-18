@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /demo/print/
+
+Sitemap: https://gundyconsultations.com/sitemap.xml

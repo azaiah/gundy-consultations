@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #14171c;
+  --concrete: #f3f1ec;
+  --paper: #ffffff;
+  --survey: #e8590c;
+  --survey-light: #ff7a33;
+  --blueprint: #1f4e79;
+  --blueprint-50: #e8eff6;
+  --steel: #5b6470;
+  --line: #dad6cc;
+  --success: #1e7a4c;
+  --warning: #b7791f;
+  --danger: #b42318;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply bg-concrete text-ink font-sans antialiased;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbars: brand colors, never default grey */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--survey) var(--concrete);
+}
+*::-webkit-scrollbar { width: 10px; height: 10px; }
+*::-webkit-scrollbar-track { background: var(--concrete); }
+*::-webkit-scrollbar-thumb {
+  background: var(--survey);
+  border-radius: 999px;
+  border: 2px solid var(--concrete);
+}
+*::-webkit-scrollbar-thumb:hover { background: var(--survey-light); }
+.dark-scroll { scrollbar-color: var(--survey-light) var(--ink); }
+.dark-scroll::-webkit-scrollbar-track { background: var(--ink); }
+.dark-scroll::-webkit-scrollbar-thumb { background: var(--survey-light); border-color: var(--ink); }
+
+/* Focus rings */
+:focus-visible {
+  outline: 3px solid var(--survey);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Typography helpers */
+.display { @apply font-display uppercase tracking-tight leading-[0.95]; }
+.stamp { @apply font-mono text-[11px] uppercase tracking-[0.14em] text-steel; }
+.eyebrow { @apply font-mono text-xs uppercase tracking-[0.18em] text-survey; }
+
+/* Blueprint grid backgrounds */
+.bg-blueprint-grid { background-image: theme('backgroundImage.grid'); background-size: 32px 32px; }
+.bg-blueprint-grid-dark { background-image: theme('backgroundImage.grid-dark'); background-size: 32px 32px; }
+
+/* Measurement tick divider */
+.tick-divider {
+  height: 14px;
+  background-image:
+    linear-gradient(to right, var(--line) 1px, transparent 1px),
+    linear-gradient(to right, var(--steel) 1px, transparent 1px);
+  background-size: 16px 8px, 80px 14px;
+  background-repeat: repeat-x;
+  background-position: 0 bottom, 0 bottom;
+  opacity: 0.8;
+}
+
+/* Chalk-line underline that snaps into place */
+.chalk { position: relative; display: inline-block; }
+.chalk::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0.06em;
+  height: 0.12em;
+  background: var(--survey);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.chalk.is-visible::after, .chalk-visible .chalk::after { transform: scaleX(1); }
+
+/* Generic card */
+.card { @apply bg-paper border border-line rounded-xl shadow-card min-w-0; }
+
+/* Grid children must be allowed to shrink below their content on small screens */
+.grid > * { min-width: 0; }
+
+/* Tap targets */
+.tap { min-height: 44px; min-width: 44px; }
+
+/* Wheel time picker scroll-snap */
+.wheel-col {
+  scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.wheel-col::-webkit-scrollbar { display: none; }
+.wheel-item { scroll-snap-align: center; }
+
+/* Rich text editor */
+.rte [contenteditable]:empty::before { content: attr(data-placeholder); color: var(--steel); }
+.rte ul { list-style: disc; padding-left: 1.25rem; }
+.rte ol { list-style: decimal; padding-left: 1.25rem; }
+
+/* Print */
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; }
+  .print-page { box-shadow: none !important; border: 0 !important; }
+}
