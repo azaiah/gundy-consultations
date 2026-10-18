@@ -20,22 +20,32 @@
     />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
+    <!-- Canonical + share preview (Open Graph / Twitter). SITE_URL must be the live URL or messaging apps cannot load the card. -->
+    <!-- TODO: confirm with Gundy: switch SITE_URL to the custom domain once it is connected in Netlify (also robots.txt, sitemap.xml, src/config/site.ts). -->
+    <link rel="canonical" href="https://gundy-consultations.netlify.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Gundy Consultations" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Gundy Consultations | Your next contract is already posted. We find it." />
     <meta
       property="og:description"
-      content="A website that wins trust plus a portal that finds leads and bids every week, drafts the outreach, and runs the jobs. Built for remodelers, roofers, GCs and specialty subs."
+      content="A website that wins trust plus a portal that finds public bids and local leads every week, drafts the outreach, and runs the jobs. Built for remodelers, roofers, GCs and specialty subs."
     />
-    <meta property="og:url" content="https://gundyconsultations.com/" />
-    <meta property="og:image" content="https://gundyconsultations.com/og-image.png" />
+    <meta property="og:url" content="https://gundy-consultations.netlify.app/" />
+    <meta property="og:image" content="https://gundy-consultations.netlify.app/og-image.png" />
+    <meta property="og:image:secure_url" content="https://gundy-consultations.netlify.app/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Gundy Consultations: Your next contract is already posted. We find it. Sample sweep card showing three scored bids and leads." />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gundy Consultations" />
+    <meta name="twitter:title" content="Gundy Consultations | Your next contract is already posted. We find it." />
     <meta
       name="twitter:description"
       content="Leads, bids and a business operating system for contractors and construction companies."
     />
+    <meta name="twitter:image" content="https://gundy-consultations.netlify.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Gundy Consultations preview card" />
 
     <!-- Hidden static form so Netlify Forms detects the consultation form at build time -->
     <form name="consultation" netlify netlify-honeypot="bot-field" hidden>

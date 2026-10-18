@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /demo/print/
 
-Sitemap: https://gundyconsultations.com/sitemap.xml
+Sitemap: https://gundy-consultations.netlify.app/sitemap.xml

@@ -43,6 +43,8 @@ src/demo/                 the portal
   print/                  print routes: capability statement, prequal packet, proposal, change order, invoice / pay app, estimate, lien waiver checklist
 netlify/functions/ai.ts   server-side OpenAI proxy (key never reaches the browser)
 public/images/            logo files; put real photos here
+public/og-image.png       the link preview card (1200x630); regenerate from scripts/og-card.html
+scripts/og-card.html      HTML source of the preview card: open in a browser at 1200x630 and screenshot, or render with Playwright
 public/sample-contacts.vcf  5-contact file for testing the import
 ```
 
@@ -59,7 +61,7 @@ public/sample-contacts.vcf  5-contact file for testing the import
 All of these are in `src/config/site.ts` unless noted.
 
 - Legal entity name
-- Live domain (also in `public/robots.txt`, `public/sitemap.xml`, and the Open Graph tags in `index.html`)
+- Custom domain: currently everything points at https://gundy-consultations.netlify.app (canonical and Open Graph tags in `index.html`, `public/robots.txt`, `public/sitemap.xml`, `src/config/site.ts`). Swap all four when the custom domain is connected, and re-render the card footer in `scripts/og-card.html`.
 - Phone number and `tel:` link
 - Email address
 - Street address, city, state, ZIP
