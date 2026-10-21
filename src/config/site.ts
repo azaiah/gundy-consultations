@@ -7,7 +7,7 @@ export const site = {
   name: 'Gundy Consultations',
   legalName: 'Gundy Consultations LLC', // TODO: confirm with Gundy (legal entity name)
   tagline: 'Your next contract is already posted. We find it.',
-  domain: 'https://gundy-consultations.netlify.app', // TODO: confirm with Gundy (switch to custom domain; also index.html, robots.txt, sitemap.xml)
+  domain: 'https://gundyconsultations.com',
   phone: '(615) 555-0100', // TODO: confirm with Gundy
   phoneHref: 'tel:+16155550100', // TODO: confirm with Gundy
   email: 'hello@gundyconsultations.com', // TODO: confirm with Gundy

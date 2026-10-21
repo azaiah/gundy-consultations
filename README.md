@@ -61,7 +61,7 @@ public/sample-contacts.vcf  5-contact file for testing the import
 All of these are in `src/config/site.ts` unless noted.
 
 - Legal entity name
-- Custom domain: currently everything points at https://gundy-consultations.netlify.app (canonical and Open Graph tags in `index.html`, `public/robots.txt`, `public/sitemap.xml`, `src/config/site.ts`). Swap all four when the custom domain is connected, and re-render the card footer in `scripts/og-card.html`.
+- Custom domain: connected (https://gundyconsultations.com). The netlify.app subdomain 301-redirects to it via `netlify.toml`.
 - Phone number and `tel:` link
 - Email address
 - Street address, city, state, ZIP

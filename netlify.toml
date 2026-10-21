@@ -6,6 +6,13 @@
 [functions]
   node_bundler = "esbuild"
 
+# Send anyone on the netlify.app subdomain to the custom domain
+[[redirects]]
+  from = "https://gundy-consultations.netlify.app/*"
+  to = "https://gundyconsultations.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
