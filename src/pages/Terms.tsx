@@ -36,7 +36,7 @@ export function Terms() {
       <h2>Limitation of liability</h2>
       <p>To the fullest extent permitted by law, our total liability arising from the Services in any 12-month period is limited to the fees you paid us in that period. We are not liable for indirect, incidental or consequential damages, including lost bids, lost profits or missed deadlines.</p>
       <h2>Governing law</h2>
-      <p>These terms are governed by the laws of the State of {site.address.state === 'TN' ? 'Tennessee' : site.address.state}, without regard to conflict-of-law rules. Disputes will be resolved in the state or federal courts located in {site.address.city}, {site.address.state}.</p>
+      <p>These terms are governed by the laws of the State of {site.address.stateName}, without regard to conflict-of-law rules. Disputes will be resolved in the state or federal courts located in {site.address.city}, {site.address.state}.</p>
       <h2>Contact</h2>
       <p>
         <a href={`mailto:${site.email}`}>{site.email}</a> or {site.phone}.

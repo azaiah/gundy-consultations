@@ -53,7 +53,7 @@ export function SiteFooter() {
               <span>
                 {site.address.street}
                 <br />
-                {site.address.city}, {site.address.state} {site.address.zip}
+                {site.address.city}, {site.address.state} {site.address.zip}, {site.address.country}
               </span>
             </li>
           </ul>

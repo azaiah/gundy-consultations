@@ -10,15 +10,17 @@ export const site = {
   domain: 'https://gundyconsultations.com',
   phone: '(615) 555-0100', // TODO: confirm with Gundy
   phoneHref: 'tel:+16155550100', // TODO: confirm with Gundy
-  email: 'hello@gundyconsultations.com', // TODO: confirm with Gundy
+  email: 'admin@gundyconsultations.com',
   address: {
-    street: '123 Main Street, Suite 200', // TODO: confirm with Gundy
-    city: 'Nashville', // TODO: confirm with Gundy
-    state: 'TN', // TODO: confirm with Gundy
-    zip: '37201', // TODO: confirm with Gundy
+    street: '4870 Sadler Road, Suite 300',
+    city: 'Glen Allen',
+    state: 'VA',
+    stateName: 'Virginia',
+    zip: '23060',
+    country: 'USA',
   },
   serviceArea: 'United States (contractors in any state; permit-data coverage verified per county)', // TODO: confirm with Gundy
-  hours: 'Mon to Fri, 8:00 AM to 6:00 PM CT', // TODO: confirm with Gundy
+  hours: 'Mon to Fri, 8:00 AM to 6:00 PM ET', // TODO: confirm with Gundy
   founded: '2024', // TODO: confirm with Gundy
   social: {
     linkedin: '', // TODO: confirm with Gundy

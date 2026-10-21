@@ -63,8 +63,6 @@ All of these are in `src/config/site.ts` unless noted.
 - Legal entity name
 - Custom domain: connected (https://gundyconsultations.com). The netlify.app subdomain 301-redirects to it via `netlify.toml`.
 - Phone number and `tel:` link
-- Email address
-- Street address, city, state, ZIP
 - Service area statement
 - Business hours
 - Founding year
