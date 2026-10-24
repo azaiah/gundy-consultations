@@ -26,7 +26,7 @@ export function Privacy() {
       </ul>
       <h2>Artificial intelligence features</h2>
       <p>
-        Some portal features (auto-fill, message drafting, the help assistant) send the text you choose to generate to a third-party language model provider through our secure server. We send only what is needed for that request, we do not permit the provider to train on your data, and we never send credentials or payment information. Each result is labelled as "Live AI" or "Demo output" so you always know which one ran.
+        Some portal features (auto-fill, message drafting, the help assistant) send the text you choose to generate to a third-party language model provider through our secure server. We send only what is needed for that request, we do not permit the provider to train on your data, and we never send credentials or payment information. Every AI result is labelled so you always know what the AI wrote.
       </p>
       <h2>Sharing</h2>
       <p>
@@ -39,7 +39,7 @@ export function Privacy() {
       <h2>Security</h2>
       <p>Data is encrypted in transit and at rest. Portal access is role-based, so clients and subcontractors see only what their role allows. No system is perfectly secure; if we learn of a breach affecting your data, we will notify you without undue delay.</p>
       <h2>Cookies and local storage</h2>
-      <p>The public website uses no advertising cookies. The demo portal stores its sample data in your browser's local storage so your changes persist between visits on that device; "Reset Demo" clears it.</p>
+      <p>The public website uses no advertising cookies.</p>
       <h2>Children</h2>
       <p>The Services are for businesses and are not directed to anyone under 18.</p>
       <h2>Changes and contact</h2>

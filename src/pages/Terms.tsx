@@ -3,13 +3,13 @@ import { site } from '@/config/site'
 import { PolicyLayout } from './PolicyLayout'
 
 export function Terms() {
-  useDocumentMeta('Terms of Service | Gundy Consultations', 'Terms governing use of the Gundy Consultations website, demo and client portal services.')
+  useDocumentMeta('Terms of Service | Gundy Consultations', 'Terms governing use of the Gundy Consultations website, demos and client portal services.')
   const updated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   return (
     <PolicyLayout title="Terms of Service" updated={updated}>
-      <p>These terms govern your use of the {site.name} website, the public demo, and, together with your signed service agreement, the client portal services provided by {site.legalName}.</p>
-      <h2>The demo</h2>
-      <p>The demo at {site.domain}/demo shows a fictional sample company. All names, bids, permits, contacts and figures in it are invented for illustration. Nothing in the demo is a real solicitation, a real lead, or a representation of results you will achieve.</p>
+      <p>These terms govern your use of the {site.name} website, any demo we share with you, and, together with your signed service agreement, the client portal services provided by {site.legalName}.</p>
+      <h2>Demos</h2>
+      <p>Any demo portal we share with you shows a fictional sample company. All names, bids, permits, contacts and figures in it are invented for illustration. Nothing in the demo is a real solicitation, a real lead, or a representation of results you will achieve.</p>
       <h2>Services and setup</h2>
       <ul>
         <li>Services are described in your service agreement and the package you select. Setup fees are due before build begins and are non-refundable once build starts; they credit toward an upgrade within 12 months.</li>

@@ -149,8 +149,8 @@ export function Hero() {
           </motion.p>
           <motion.div className="mt-8 flex flex-col sm:flex-row gap-3" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }}>
             <LinkButton to="#consult" size="lg">Book a Free Consultation</LinkButton>
-            <LinkButton to="/demo" size="lg" variant="outline" className="!bg-transparent !text-white !border-white/30 hover:!border-white" icon={<ArrowRight size={18} />}>
-              Try the Live Demo
+            <LinkButton to="#features" size="lg" variant="outline" className="!bg-transparent !text-white !border-white/30 hover:!border-white" icon={<ArrowRight size={18} />}>
+              See What's Inside
             </LinkButton>
           </motion.div>
           <motion.ul className="mt-8 grid grid-cols-3 gap-3 max-w-lg" initial={reduce ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>

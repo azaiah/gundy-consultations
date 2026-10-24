@@ -23,7 +23,6 @@ export function SiteFooter() {
               ['/#who', "Who it's for"],
               ['/#packages', 'Packages'],
               ['/#faq', 'FAQ'],
-              ['/demo', 'Live demo'],
             ].map(([href, label]) => (
               <li key={href}>
                 {href.startsWith('/#') ? (

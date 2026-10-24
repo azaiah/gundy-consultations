@@ -1,15 +1,24 @@
 [build]
   command = "npm run build"
   publish = "dist"
-  functions = "netlify/functions"
-
-[functions]
-  node_bundler = "esbuild"
 
 # Send anyone on the netlify.app subdomain to the custom domain
 [[redirects]]
   from = "https://gundy-consultations.netlify.app/*"
   to = "https://gundyconsultations.com/:splat"
+  status = 301
+  force = true
+
+# The demo now lives on its own private link; old /demo links land on the site
+[[redirects]]
+  from = "/demo/*"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/demo"
+  to = "/"
   status = 301
   force = true
 

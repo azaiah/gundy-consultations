@@ -18,7 +18,7 @@ export function NotFound() {
           <p className="mt-4 text-white/70 max-w-md mx-auto">This page is not in the drawing set. The address may have changed, or the link was mistyped.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
             <LinkButton to="/" icon={<ArrowLeft size={18} />}>Back to the site</LinkButton>
-            <LinkButton to="/demo" variant="outline" className="!bg-transparent !text-white !border-white/30">Open the demo</LinkButton>
+            <LinkButton to="/#consult" variant="outline" className="!bg-transparent !text-white !border-white/30">Book a Free Consultation</LinkButton>
           </div>
         </div>
       </div>

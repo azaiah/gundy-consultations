@@ -43,9 +43,9 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="hidden lg:flex items-center gap-4">
-          <Link to="/demo" className="text-sm font-semibold text-blueprint hover:underline inline-flex items-center gap-1">
-            Try the Demo <ArrowRight size={14} />
-          </Link>
+          <a href="/#consult" className="text-sm font-semibold text-blueprint hover:underline inline-flex items-center gap-1">
+            Request a Private Demo <ArrowRight size={14} />
+          </a>
           <LinkButton to="/#consult" size="md">Book a Free Consultation</LinkButton>
         </div>
         <button type="button" className="lg:hidden tap inline-flex items-center justify-center rounded-lg hover:bg-ink/5" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}>
@@ -69,9 +69,9 @@ export function SiteHeader() {
                   {n.label}
                 </a>
               ))}
-              <Link to="/demo" className="tap flex items-center rounded-lg px-3 text-base font-semibold text-blueprint hover:bg-concrete">
-                Try the Live Demo
-              </Link>
+              <a href="/#consult" onClick={() => setOpen(false)} className="tap flex items-center rounded-lg px-3 text-base font-semibold text-blueprint hover:bg-concrete">
+                Request a Private Demo
+              </a>
             </nav>
             <div className="mt-auto p-4 border-t border-line">
               <LinkButton to="/#consult" className="w-full" size="lg" onClick={() => setOpen(false)}>
@@ -90,7 +90,7 @@ export function MobileCtaBar() {
   return (
     <div className="lg:hidden fixed bottom-0 inset-x-0 z-[55] border-t border-line bg-paper/95 backdrop-blur p-3 pb-[max(12px,env(safe-area-inset-bottom))] no-print">
       <div className="flex gap-2">
-        <LinkButton to="/demo" variant="outline" className="flex-1">Try the Demo</LinkButton>
+        <LinkButton to="/#packages" variant="outline" className="flex-1">See Packages</LinkButton>
         <LinkButton to="/#consult" className="flex-[1.4]">Book a Free Consultation</LinkButton>
       </div>
     </div>

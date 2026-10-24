@@ -79,8 +79,7 @@ export function ConsultForm() {
             <div className="text-center py-10" role="status">
               <CheckCircle2 size={48} className="mx-auto text-success" />
               <h3 className="font-display uppercase text-3xl mt-4">Request received</h3>
-              <p className="text-steel mt-2 max-w-sm mx-auto">We will call or email within one business day to schedule your consultation. Meanwhile, the live demo is open.</p>
-              <Button className="mt-6" variant="dark" onClick={() => (window.location.href = '/demo')}>Try the Live Demo</Button>
+              <p className="text-steel mt-2 max-w-sm mx-auto">We will call or email within one business day to schedule your consultation and set up your private demo.</p>
             </div>
           ) : (
             <form name={site.consultationFormName} method="POST" data-netlify="true" onSubmit={onSubmit} noValidate className="grid gap-4 sm:grid-cols-2">

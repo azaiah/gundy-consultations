@@ -1,12 +1,10 @@
-import { Suspense, lazy, useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { LandingPage } from './site/LandingPage'
 import { SiteLayout } from './site/SiteLayout'
 import { Privacy } from './pages/Privacy'
 import { Terms } from './pages/Terms'
 import { NotFound } from './pages/NotFound'
-
-const DemoApp = lazy(() => import('./demo/DemoApp'))
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -47,7 +45,6 @@ export default function App() {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
           </Route>
-          <Route path="/demo/*" element={<DemoApp />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>

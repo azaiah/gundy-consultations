@@ -28,7 +28,6 @@ export const site = {
     instagram: '', // TODO: confirm with Gundy
   },
   consultationFormName: 'consultation',
-  demoPath: '/demo',
 } as const
 
 export type PackageTier = {
