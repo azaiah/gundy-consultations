@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { createPortal } from 'react-dom'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import { GundyLogo } from '@/components/GundyLogo'
 import { LinkButton } from '@/components/Button'
 import { useFocusTrap } from '@/components/useFocusTrap'
 
-const nav = [
-  { href: '/#how-it-works', label: 'How it works' },
-  { href: '/#features', label: 'Features' },
-  { href: '/#who', label: "Who it's for" },
-  { href: '/#packages', label: 'Packages' },
-  { href: '/#faq', label: 'FAQ' },
+export const nav = [
+  { href: '/how-it-works', label: 'How it works' },
+  { href: '/portal', label: 'The portal' },
+  { href: '/who-we-serve', label: 'Who we serve' },
+  { href: '/pricing', label: 'Pricing' },
+  { href: '/faq', label: 'FAQ' },
 ]
 
 export function SiteHeader() {
@@ -37,16 +37,16 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Primary" className="hidden lg:flex items-center gap-7">
           {nav.map((n) => (
-            <a key={n.href} href={n.href} className="text-sm font-medium text-ink/80 hover:text-ink">
+            <NavLink key={n.href} to={n.href} className={({ isActive }) => `nav-link ${isActive ? 'is-active' : ''}`}>
               {n.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
         <div className="hidden lg:flex items-center gap-4">
-          <a href="/#consult" className="text-sm font-semibold text-blueprint hover:underline inline-flex items-center gap-1">
-            Request a Private Demo <ArrowRight size={14} />
-          </a>
-          <LinkButton to="/#consult" size="md">Book a Free Consultation</LinkButton>
+          <Link to="/contact" className="text-sm font-semibold text-blueprint hover:underline inline-flex items-center gap-1">
+            Private Demo <ArrowRight size={14} />
+          </Link>
+          <LinkButton to="/contact" size="md">Book a Free Consultation</LinkButton>
         </div>
         <button type="button" className="lg:hidden tap inline-flex items-center justify-center rounded-lg hover:bg-ink/5" aria-label="Open menu" aria-expanded={open} onClick={() => setOpen(true)}>
           <Menu size={24} />
@@ -64,17 +64,20 @@ export function SiteHeader() {
               </button>
             </div>
             <nav aria-label="Mobile" className="flex flex-col p-4 gap-1">
-              {nav.map((n) => (
-                <a key={n.href} href={n.href} onClick={() => setOpen(false)} className="tap flex items-center rounded-lg px-3 text-base font-medium text-ink hover:bg-concrete">
-                  {n.label}
-                </a>
+              <NavLink to="/" end onClick={() => setOpen(false)} className={({ isActive }) => `tap flex items-center justify-between rounded-lg px-3 text-base font-medium hover:bg-concrete ${isActive ? 'text-survey' : 'text-ink'}`}>
+                Home <span className="font-mono text-[10px] tracking-[0.2em] text-steel">01</span>
+              </NavLink>
+              {nav.map((n, i) => (
+                <NavLink key={n.href} to={n.href} onClick={() => setOpen(false)} className={({ isActive }) => `tap flex items-center justify-between rounded-lg px-3 text-base font-medium hover:bg-concrete ${isActive ? 'text-survey' : 'text-ink'}`}>
+                  {n.label} <span className="font-mono text-[10px] tracking-[0.2em] text-steel">0{i + 2}</span>
+                </NavLink>
               ))}
-              <a href="/#consult" onClick={() => setOpen(false)} className="tap flex items-center rounded-lg px-3 text-base font-semibold text-blueprint hover:bg-concrete">
+              <Link to="/contact" onClick={() => setOpen(false)} className="tap flex items-center rounded-lg px-3 text-base font-semibold text-blueprint hover:bg-concrete">
                 Request a Private Demo
-              </a>
+              </Link>
             </nav>
             <div className="mt-auto p-4 border-t border-line">
-              <LinkButton to="/#consult" className="w-full" size="lg" onClick={() => setOpen(false)}>
+              <LinkButton to="/contact" className="w-full" size="lg" onClick={() => setOpen(false)}>
                 Book a Free Consultation
               </LinkButton>
             </div>
@@ -87,11 +90,13 @@ export function SiteHeader() {
 }
 
 export function MobileCtaBar() {
+  const { pathname } = useLocation()
+  if (pathname === '/contact') return null
   return (
     <div className="lg:hidden fixed bottom-0 inset-x-0 z-[55] border-t border-line bg-paper/95 backdrop-blur p-3 pb-[max(12px,env(safe-area-inset-bottom))] no-print">
       <div className="flex gap-2">
-        <LinkButton to="/#packages" variant="outline" className="flex-1">See Packages</LinkButton>
-        <LinkButton to="/#consult" className="flex-[1.4]">Book a Free Consultation</LinkButton>
+        <LinkButton to="/pricing" variant="outline" className="flex-1">See Packages</LinkButton>
+        <LinkButton to="/contact" className="flex-[1.4]">Book a Free Consultation</LinkButton>
       </div>
     </div>
   )

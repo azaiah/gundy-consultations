@@ -1,23 +1,38 @@
 import { useEffect } from 'react'
 
-/** Per-route <title> + meta description without a helmet dependency. */
-export function useDocumentMeta(title: string, description?: string) {
+const ORIGIN = 'https://gundyconsultations.com'
+
+function setMeta(selector: string, attr: 'name' | 'property', key: string, value: string) {
+  let el = document.head.querySelector<HTMLMetaElement>(selector)
+  if (!el) {
+    el = document.createElement('meta')
+    el.setAttribute(attr, key)
+    document.head.appendChild(el)
+  }
+  el.content = value
+}
+
+/** Per-route <title>, description, canonical URL and share-card text without a helmet dependency. */
+export function useDocumentMeta(title: string, description?: string, path?: string) {
   useEffect(() => {
-    const prev = document.title
     document.title = title
-    let meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
-    const prevDesc = meta?.content
+    setMeta('meta[property="og:title"]', 'property', 'og:title', title)
+    setMeta('meta[name="twitter:title"]', 'name', 'twitter:title', title)
     if (description) {
-      if (!meta) {
-        meta = document.createElement('meta')
-        meta.name = 'description'
-        document.head.appendChild(meta)
+      setMeta('meta[name="description"]', 'name', 'description', description)
+      setMeta('meta[property="og:description"]', 'property', 'og:description', description)
+      setMeta('meta[name="twitter:description"]', 'name', 'twitter:description', description)
+    }
+    if (path !== undefined) {
+      const url = ORIGIN + path
+      let link = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+      if (!link) {
+        link = document.createElement('link')
+        link.rel = 'canonical'
+        document.head.appendChild(link)
       }
-      meta.content = description
+      link.href = url
+      setMeta('meta[property="og:url"]', 'property', 'og:url', url)
     }
-    return () => {
-      document.title = prev
-      if (meta && prevDesc !== undefined) meta.content = prevDesc
-    }
-  }, [title, description])
+  }, [title, description, path])
 }

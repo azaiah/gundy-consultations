@@ -18,18 +18,15 @@ export function SiteFooter() {
           <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-survey-light mb-4">Explore</h3>
           <ul className="space-y-2 text-sm">
             {[
-              ['/#how-it-works', 'How it works'],
-              ['/#features', 'Features'],
-              ['/#who', "Who it's for"],
-              ['/#packages', 'Packages'],
-              ['/#faq', 'FAQ'],
+              ['/how-it-works', 'How it works'],
+              ['/portal', 'The portal'],
+              ['/who-we-serve', 'Who we serve'],
+              ['/pricing', 'Pricing'],
+              ['/faq', 'FAQ'],
+              ['/contact', 'Book a consultation'],
             ].map(([href, label]) => (
               <li key={href}>
-                {href.startsWith('/#') ? (
-                  <a href={href} className="text-white/80 hover:text-white inline-flex min-h-[32px] items-center">{label}</a>
-                ) : (
-                  <Link to={href} className="text-white/80 hover:text-white inline-flex min-h-[32px] items-center">{label}</Link>
-                )}
+                <Link to={href} className="text-white/80 hover:text-white inline-flex min-h-[32px] items-center">{label}</Link>
               </li>
             ))}
           </ul>

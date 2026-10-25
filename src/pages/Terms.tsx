@@ -3,7 +3,7 @@ import { site } from '@/config/site'
 import { PolicyLayout } from './PolicyLayout'
 
 export function Terms() {
-  useDocumentMeta('Terms of Service | Gundy Consultations', 'Terms governing use of the Gundy Consultations website, demos and client portal services.')
+  useDocumentMeta('Terms of Service | Gundy Consultations', 'Terms governing use of the Gundy Consultations website, demos and client portal services.', '/terms')
   const updated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   return (
     <PolicyLayout title="Terms of Service" updated={updated}>

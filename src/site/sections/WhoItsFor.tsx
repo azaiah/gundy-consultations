@@ -18,12 +18,12 @@ const groups = [
   },
 ]
 
-export function WhoItsFor() {
+export function WhoItsFor({ heading = false }: { heading?: boolean }) {
   return (
     <section id="who" aria-labelledby="who-h" className="py-20 sm:py-28 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Who it's for" title={<span id="who-h">Two buyers. One product. Different switches turned on.</span>} />
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        {heading ? <SectionHeading eyebrow="Who it's for" title={<span id="who-h">Two buyers. One product. Different switches turned on.</span>} /> : <h2 id="who-h" className="sr-only">Who it's for</h2>}
+        <div className="mt-2 grid gap-5 lg:grid-cols-2">
           {groups.map((g, i) => (
             <Rise key={g.title} index={i}>
               <article className="card h-full p-6 sm:p-8">

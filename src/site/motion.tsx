@@ -43,11 +43,12 @@ export function Chalk({ children, className = '' }: { children: ReactNode; class
   )
 }
 
-export function SectionHeading({ eyebrow, title, text, dark = false, align = 'left' }: { eyebrow: string; title: ReactNode; text?: ReactNode; dark?: boolean; align?: 'left' | 'center' }) {
+export function SectionHeading({ eyebrow, title, text, dark = false, align = 'left', as = 'h2' }: { eyebrow: string; title: ReactNode; text?: ReactNode; dark?: boolean; align?: 'left' | 'center'; as?: 'h1' | 'h2' }) {
+  const H = as
   return (
     <div className={`max-w-3xl ${align === 'center' ? 'mx-auto text-center' : ''}`}>
       <p className={`eyebrow ${dark ? 'text-survey-light' : ''}`}>{eyebrow}</p>
-      <h2 className={`display mt-3 text-4xl sm:text-5xl lg:text-6xl ${dark ? 'text-white' : 'text-ink'}`}>{title}</h2>
+      <H className={`display mt-3 text-4xl sm:text-5xl lg:text-6xl ${dark ? 'text-white' : 'text-ink'}`}>{title}</H>
       {text && <p className={`mt-4 text-base sm:text-lg leading-relaxed ${dark ? 'text-white/75' : 'text-steel'}`}>{text}</p>}
     </div>
   )

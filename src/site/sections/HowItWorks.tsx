@@ -23,7 +23,7 @@ export function HowItWorks() {
   return (
     <section id="how-it-works" aria-labelledby="how-h" className="bg-ink text-white bg-blueprint-grid-dark py-20 sm:py-28 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading dark eyebrow="How it works" title={<span id="how-h">Six steps, every week, without you chasing anything</span>} text="Think of it as a measuring tape laid across your week. Each tick is a step the system takes for you." />
+        <SectionHeading dark eyebrow="How it works" title={<span id="how-h">The weekly loop</span>} text="From your credentials to a signed contract, laid out like a tape measure. Scroll and watch each step light up." />
 
         <div ref={ref} className="relative mt-16">
           {/* Desktop: horizontal tape */}

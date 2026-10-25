@@ -37,13 +37,13 @@ const faqs = [
   },
 ]
 
-export function Faq() {
+export function Faq({ heading = false }: { heading?: boolean }) {
   const [open, setOpen] = useState<number | null>(0)
   return (
     <section id="faq" aria-labelledby="faq-h" className="py-20 sm:py-28 scroll-mt-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
-        <SectionHeading eyebrow="FAQ" title={<span id="faq-h">Questions contractors ask us</span>} align="center" />
-        <div className="mt-12 divide-y divide-line card">
+        {heading ? <SectionHeading eyebrow="FAQ" title={<span id="faq-h">Questions contractors ask us</span>} align="center" /> : <h2 id="faq-h" className="sr-only">Frequently asked questions</h2>}
+        <div className="mt-2 divide-y divide-line card">
           {faqs.map((f, i) => {
             const isOpen = open === i
             return (

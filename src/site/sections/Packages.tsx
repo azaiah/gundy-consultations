@@ -1,17 +1,17 @@
 import { Check } from 'lucide-react'
-import { packages, packageNotes, setupTimeline } from '@/config/site'
+import { packages, packageNotes } from '@/config/site'
 import { LinkButton } from '@/components/Button'
 import { Badge } from '@/components/Badge'
 import { Rise, SectionHeading } from '../motion'
 
 const usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })
 
-export function Packages() {
+export function Packages({ heading = true }: { heading?: boolean }) {
   return (
     <section id="packages" aria-labelledby="pk-h" className="py-20 sm:py-28 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Packages" title={<span id="pk-h">Pick the cadence that matches how much work you want</span>} text="Every package includes the website, the portal and the Company Brain. The difference is how often we sweep and how much we prepare for you." />
-        <div className="mt-12 grid gap-5 lg:grid-cols-3 items-stretch">
+        {heading ? <SectionHeading eyebrow="Packages" title={<span id="pk-h">Pick the cadence that matches how much work you want</span>} text="Every package includes the website, the portal and the Company Brain. The difference is how often we sweep and how much we prepare for you." /> : <h2 id="pk-h" className="sr-only">Packages</h2>}
+        <div className={`${heading ? 'mt-12' : ''} grid gap-5 lg:grid-cols-3 items-stretch`}>
           {packages.map((p, i) => {
             const featured = !!p.highlight
             return (
@@ -38,7 +38,7 @@ export function Packages() {
                       </li>
                     ))}
                   </ul>
-                  <LinkButton to="#consult" className="mt-7 w-full" variant={featured ? 'primary' : 'dark'} size="lg">
+                  <LinkButton to="/contact" className="mt-7 w-full" variant={featured ? 'primary' : 'dark'} size="lg">
                     Book a Free Consultation
                   </LinkButton>
                 </article>
@@ -52,19 +52,6 @@ export function Packages() {
           ))}
         </ul>
 
-        <div className="mt-14 card p-6 sm:p-8">
-          <p className="eyebrow">Setup timeline</p>
-          <h3 className="font-display uppercase text-3xl mt-2">Live in four weeks</h3>
-          <ol className="mt-6 grid gap-6 sm:grid-cols-3">
-            {setupTimeline.map((t, i) => (
-              <li key={t.week} className="relative pl-5 border-l-2 border-survey">
-                <span className="stamp">{t.week}</span>
-                <h4 className="font-semibold text-ink mt-1">{i + 1}. {t.title}</h4>
-                <p className="text-sm text-steel mt-1">{t.text}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
       </div>
     </section>
   )

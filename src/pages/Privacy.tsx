@@ -3,7 +3,7 @@ import { site } from '@/config/site'
 import { PolicyLayout } from './PolicyLayout'
 
 export function Privacy() {
-  useDocumentMeta('Privacy Policy | Gundy Consultations', 'How Gundy Consultations collects, uses and protects information from website visitors and portal users.')
+  useDocumentMeta('Privacy Policy | Gundy Consultations', 'How Gundy Consultations collects, uses and protects information from website visitors and portal users.', '/privacy')
   const updated = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
   return (
     <PolicyLayout title="Privacy Policy" updated={updated}>

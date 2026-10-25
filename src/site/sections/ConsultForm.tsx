@@ -22,7 +22,7 @@ function validate(f: FormState) {
   return e
 }
 
-export function ConsultForm() {
+export function ConsultForm({ asPage = false }: { asPage?: boolean }) {
   const [form, setForm] = useState<FormState>(empty)
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({})
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -62,7 +62,7 @@ export function ConsultForm() {
     <section id="consult" aria-labelledby="consult-h" className="py-20 sm:py-28 bg-ink text-white bg-blueprint-grid-dark scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
-          <SectionHeading dark eyebrow="Book a free consultation" title={<span id="consult-h">Thirty minutes. We run a sample sweep on your profile.</span>} text="Tell us your trades and service area. On the call we check permit coverage in your counties and show you real opportunities that match, before you decide anything." />
+          <SectionHeading as={asPage ? 'h1' : 'h2'} dark eyebrow="Book a free consultation" title={<span id="consult-h">Thirty minutes. We run a sample sweep on your profile.</span>} text="Tell us your trades and service area. On the call we check permit coverage in your counties and show you real opportunities that match, before you decide anything." />
           <ul className="mt-8 space-y-3 text-white/80">
             <li>
               <a href={site.phoneHref} className="inline-flex items-center gap-2 hover:text-white min-h-[44px]"><Phone size={18} /> {site.phone}</a>
