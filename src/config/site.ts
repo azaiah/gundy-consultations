@@ -8,8 +8,8 @@ export const site = {
   legalName: 'Gundy Consultations LLC', // TODO: confirm with Gundy (legal entity name)
   tagline: 'Your next contract is already posted. We find it.',
   domain: 'https://gundyconsultations.com',
-  phone: '(615) 555-0100', // TODO: confirm with Gundy
-  phoneHref: 'tel:+16155550100', // TODO: confirm with Gundy
+  phone: '(804) 205-5003',
+  phoneHref: 'tel:+18042055003',
   email: 'admin@gundyconsultations.com',
   address: {
     street: '4870 Sadler Road, Suite 300',
